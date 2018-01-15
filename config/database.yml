@@ -1,16 +1,17 @@
-
 default: &default
   adapter: postgresql
   user: stokwell
+  encoding: unicode
+  host: localhost
 
 development:
   <<: *default
-  database: db/development
+  database: daily_development
 
 test:
   <<: *default
-  database: db/test
+  database: daily_test
 
 production:
   <<: *default
-  database: db/production
+  database: daily_production

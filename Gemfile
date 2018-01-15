@@ -6,9 +6,18 @@ gem 'pg'
 
 gem 'puma', '~> 3.7'
 
+gem 'knock'
+
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'active_model_serializers'
+
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_bot'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
