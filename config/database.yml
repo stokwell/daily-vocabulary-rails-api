@@ -1,12 +1,12 @@
 default: &default
   adapter: postgresql
-  user: stokwell
   encoding: unicode
-  host: localhost
-
+  
 development:
   <<: *default
   database: daily_development
+  user: stokwell
+  host: localhost
 
 test:
   <<: *default
@@ -15,3 +15,5 @@ test:
 production:
   <<: *default
   database: daily_production
+  username: stokwell
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
