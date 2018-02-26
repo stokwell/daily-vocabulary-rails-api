@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     resources :words, only: [:index, :create]
     resources :readings, only: [:index, :show, :create]
 
+    get 'readings/:id/get_pdf', to: 'readings#get_pdf'
+
   end
 end

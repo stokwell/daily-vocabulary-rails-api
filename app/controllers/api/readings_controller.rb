@@ -16,6 +16,16 @@ class Api::ReadingsController < ApplicationController
     render json: reading, each_serializer: Api::ReadingSerializer
   end
 
+  def get_pdf
+    reading = Reading.find_by(id: params[:id])
+    respond_to do |format|
+      format.pdf do
+        pdf = ReadingPdf.new
+        send_data pdf.render, type: "application/pdf", filename: "reading_#{reading.id}.pdf", disposition: "inline"
+      end
+    end
+  end
+
   private
 
   def reading_params
