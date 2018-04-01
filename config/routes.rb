@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root to: 'readings#index'
+  resources :readings, only: [:index, :show, :create]
+  resources :words, only: [:index, :show, :create, :new]
+
   namespace :api do
     post 'user_token' => 'user_token#create'
     resources :words, only: [:index, :create]

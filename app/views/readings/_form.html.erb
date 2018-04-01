@@ -1,0 +1,8 @@
+<%= form_for :reading, url: readings_path, remote: true, class: 'form-inline' do |f| %>
+  <div class="form-row">
+    <div class="col-5">
+      <%= f.text_field :title, class: "form-control mr-sm-2", placeholder: "Enter a title for your new word collection" %>
+    </div>
+    <%= f.submit "Create", class: "btn btn-primary mb-2" %>
+  </div>
+<% end %>

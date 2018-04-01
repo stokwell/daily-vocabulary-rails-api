@@ -5,7 +5,6 @@ class Resolvers::CreateReading < GraphQL::Function
   type Types::ReadingType
 
   def call(_obj, args, ctx)
-    byebug
     Reading.create!(
       title: args[:title],
       user: ctx[:current_user]

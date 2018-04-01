@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   include ActionController::MimeResponds
   include Knock::Authenticable
   #before_action :authenticate_user
