@@ -7,20 +7,38 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 import Vue from 'vue/dist/vue.esm'
+import Vuex from 'vuex'
+import TurbolinksAdapter from 'vue-turbolinks'
+
 import App from '../app.vue'
 
-window.store = {}
+Vue.use(Vuex)
+Vue.use(TurbolinksAdapter)
+
+Vue.component('app', App)
+Vue.component('vue-word-form', {
+
+})
+
+window.store = new Vuex.Store({
+  state: {
+    words: []
+  },
+
+  mutations: {
+    addWord(state, data){
+
+    },
+    editing(state, data){
+
+    }
+  }
+})
 
 document.addEventListener('turbolinks:load', function(){
-  var element = document.querySelector('#words')
-  if(element != undefined) {
-    window.store.readings = JSON.parse(element.dataset.readings)
-
-    const app = new Vue({
-      el: element,
-      data: window.store,
-      template: "<App :words='gon.words' />" ,
-      components: { App }
-    })
-  }
+  const app = new Vue({
+    data: window.store,
+    el: '[data-behavior="vue"]',
+    store: window.store
+  })
 })

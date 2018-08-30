@@ -1,20 +1,19 @@
 <div class="box">
-  <div class="column left" style="background-color:#aaa;">
-    <%= link_to "Daily Vocabulary", root_path, class: "dropdown-item" %>
+
+  <!-- <div class="column left" style="background-color:#aaa;">
+   <%= link_to "Daily Vocabulary", root_path, class: "dropdown-item" %>
     <%= link_to "Your Vocabulary", words_path, class: "dropdown-item" %>
+  </div> -->
+
+  <div class="column left" style="background-color:#ccc;">
+    <%= link_to_unless_current "EN", url_for(locale: 'en') %>
+    <%= link_to_unless_current "DE", url_for(locale: 'de') %>
+    <%= link_to_unless_current "FR", url_for(locale: 'fr') %>
+    <app :words="<%= @words.to_json %>"></app>
   </div>
-  <div class="column middle" style="background-color:#bbb;">
-    <% @words.each do |word| %>
-      <ul>
-        <li>
-          <%= word.original %>
-          <%= word.translation %>
-        </li>
-      </ul>
-    <% end %>
-    <div id="words"></div>
-  </div>
-  <div class="column right" style="background-color:#ccc;">
+
+  <div class="column right" style="background-color:white;">
     <%= render 'form', word: @word %>
   </div>
+
 </div>

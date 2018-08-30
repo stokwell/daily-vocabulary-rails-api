@@ -24,6 +24,7 @@ gem 'font-awesome-sass', '~> 4.7'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'gon'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'rspec-rails'
