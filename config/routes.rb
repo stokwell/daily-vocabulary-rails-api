@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'auth/callbacks' }
+
   root to: "words#index"
   get '', to: redirect("/#{I18n.default_locale}")
 
 
-  scope ":locale", locale: /#{I18n.available_locales.join("|")}/, defaults: {locale: "en"}  do
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/, defaults: { locale: "en" }  do
     resources :readings, only: [:index, :show, :create]
     resources :words, only: [:index, :show, :create, :new]
   end

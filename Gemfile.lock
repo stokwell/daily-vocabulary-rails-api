@@ -79,11 +79,6 @@ GEM
     diff-lcs (1.3)
     erubi (1.7.1)
     execjs (2.7.0)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffaker (2.8.1)
@@ -108,10 +103,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jsonapi-renderer (0.2.0)
     jwt (1.5.6)
-    knock (2.1.1)
-      bcrypt (~> 3.1)
-      jwt (~> 1.5)
-      rails (>= 4.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -145,6 +136,8 @@ GEM
     omniauth-oauth2 (1.5.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.2)
+    omniauth-vkontakte (1.4.1)
+      omniauth-oauth2 (~> 1.2)
     orm_adapter (0.5.0)
     pdf-core (0.7.0)
     pg (1.0.0)
@@ -279,7 +272,6 @@ DEPENDENCIES
   devise
   devise-bootstrapped!
   devise_masquerade (~> 0.6.0)
-  factory_girl_rails
   ffaker
   font-awesome-sass (~> 4.7)
   foreman (~> 0.84.0)
@@ -287,9 +279,9 @@ DEPENDENCIES
   graphql
   jquery-rails (~> 4.3.1)
   jwt
-  knock
   listen (>= 3.0.5, < 3.2)
   omniauth-facebook (~> 4.0)
+  omniauth-vkontakte
   pg
   prawn
   puma (~> 3.7)

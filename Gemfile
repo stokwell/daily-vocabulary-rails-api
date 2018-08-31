@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.1.4'
 gem 'pg'
 gem 'puma', '~> 3.7'
-gem 'knock'
 gem 'prawn'
 gem 'graphql'
 gem 'jwt'
@@ -25,10 +24,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'gon'
 gem 'rails-i18n'
+gem 'devise'
+gem 'omniauth-facebook', '~> 4.0'
+gem 'omniauth-vkontakte'
+
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

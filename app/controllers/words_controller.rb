@@ -10,9 +10,11 @@ class WordsController < ApplicationController
 
 
   def create
-    word = Word.create(word_params.merge(user_id: current_user.id, language: I18n.locale ))
-    if word.save
-      gon.word = word
+    @word = Word.create(word_params.merge(user_id: current_user.id, language: I18n.locale ))
+    respond_to do |format|
+      if @word.save
+       format.js  
+     end
     end
   end
 

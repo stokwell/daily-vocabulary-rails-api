@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   include ActionController::MimeResponds
-  include Knock::Authenticable
   before_action :set_locale
-  # before_action :authenticate_user
 
   def query
     result = Schema.execute(
@@ -18,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_oprions(options = {})
-    {locale: I18n.locale}
+    { locale: I18n.locale }
   end
 
 end
