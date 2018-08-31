@@ -1,0 +1,17 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+  <%= render 'form' %>
+  <% @readings.each do |reading| %>
+    <ul>
+      <li>
+        <%=link_to reading_path(reading) do %>
+          <%= reading.title %>
+        <% end %>
+      </li>
+    </ul>
+  <% end %>
+
+
+<!-- <%= tag.div id: :readings, data: { readings: @readings.to_json } %> -->
+</div>

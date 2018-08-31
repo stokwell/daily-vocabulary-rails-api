@@ -7,13 +7,14 @@ class Api::WordsController < ApplicationController
   end
 
   def create
-    word = Word.create(word_params.merge(user_id: current_user.id))
+    reading = Reading.find_by(id: word_params[:reading_id]) 
+    word = Word.create(word_params.merge(user_id: current_user.id, reading_id: reading.id))
     render json: word, each_serializer: Api::WordSerializer
   end
 
   private
 
   def word_params
-    params.require(:word).permit(:original, :translation, :transcription, :to, :from, :article)
+    params.require(:word).permit(:original, :translation, :transcription, :to, :from, :article, :reading_id)
   end
 end
