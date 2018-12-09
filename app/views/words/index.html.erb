@@ -9,7 +9,13 @@
     <%= link_to_unless_current "EN", url_for(locale: 'en') %>
     <%= link_to_unless_current "DE", url_for(locale: 'de') %>
     <%= link_to_unless_current "FR", url_for(locale: 'fr') %>
-    <app :words="<%= @words.to_json %>"></app>
+    <div>
+      <% @words.each do |word| %>
+
+        <p><%= word.original %> - <%= word.translation %></p>
+      <% end %>      
+    </div>
+    <div id="word-list"></div>
   </div>
 
   <div class="column right" style="background-color:white;">

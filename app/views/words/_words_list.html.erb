@@ -1,0 +1,11 @@
+<% if !words.empty? %>
+  <ul>
+    <% words.each do |word| %>
+      <li><%= word.original %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <div>
+    <p>User not found</p>
+  </div>
+<% end %>

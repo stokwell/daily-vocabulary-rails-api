@@ -5,7 +5,6 @@ class WordsController < ApplicationController
     @word = Word.new
     @word.examples.build
     @words = Word.by_user(current_user).order(created_at: :desc).where(language: I18n.locale)
-    gon.words = @words
   end
 
 
@@ -13,7 +12,7 @@ class WordsController < ApplicationController
     @word = Word.create(word_params.merge(user_id: current_user.id, language: I18n.locale ))
     respond_to do |format|
       if @word.save
-       format.js  
+       format.js 
      end
     end
   end
