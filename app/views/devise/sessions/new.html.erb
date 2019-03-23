@@ -1,3 +1,10 @@
-<div class="wrapper">
-  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+<p class="main-title has-text-centered">DailyVocabulary</p>
+<p class="sub-title has-text-centered">TranslateMe</p>
+<div class="field button-field">
+  <div class="control has-text-centered"">
+    <%= link_to "Login with Vkontakte", user_facebook_omniauth_authorize_path, class: "button is-info" %>
+  </div>
+  <div class="control has-text-centered"">
+    <%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, class: "button is-link" %>
+  </div>
 </div>
