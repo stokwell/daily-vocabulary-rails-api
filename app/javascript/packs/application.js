@@ -15,11 +15,6 @@ import App from '../app.vue'
 Vue.use(Vuex)
 Vue.use(TurbolinksAdapter)
 
-Vue.component('app', App)
-Vue.component('vue-word-form', {
-
-})
-
 window.store = new Vuex.Store({
   state: {
     words: []
@@ -36,9 +31,14 @@ window.store = new Vuex.Store({
 })
 
 document.addEventListener('turbolinks:load', function(){
-  const app = new Vue({
-    data: window.store,
-    el: '[data-behavior="vue"]',
-    store: window.store
-  })
+  const element = document.querySelector("#dashboard")
+  if(element != undefined) {
+    const app = new Vue({
+      el: element,
+      store: window.store,
+      template: "<App/>",
+      components: { App }
+    })
+  }
+
 })

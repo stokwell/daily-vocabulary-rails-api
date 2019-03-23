@@ -1,6 +1,7 @@
-<% if !words.empty? %>
+<div id="word-list">
+<% if !@words.empty? %>
   <ul>
-    <% words.each do |word| %>
+    <% @words.each do |word| %>
       <li><%= word.original %></li>
     <% end %>
   </ul>
@@ -9,3 +10,4 @@
     <p>User not found</p>
   </div>
 <% end %>
+</div>

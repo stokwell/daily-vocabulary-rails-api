@@ -1,12 +1,12 @@
 <vue-word-form inline-template>
-  <%= form_for(@word, url: { action: 'create', locale: params[:locale]}, remote: true) do |f| %>
+  <%= form_for(@word, url: { action: 'create', controller: 'words' }, remote: true) do |f| %>
     <div class="form">
       <div class="form-group">
         <%= f.text_field :original, class: "form-control", placeholder: "Word" %>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <%= f.text_field :translation, class: "form-control", placeholder: "Translation" %>
-      </div>
+      </div> -->
 
       <div class="form-group">
         <%= f.submit "Save", class: "btn btn-info btn-block btn-sm" %>

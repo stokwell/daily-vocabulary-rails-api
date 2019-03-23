@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   include ActionController::MimeResponds
+  before_action :authenticate_user!
   before_action :set_locale
-
+  layout :layout_by_resource
+  
   def query
     result = Schema.execute(
       params[:query]
@@ -18,6 +20,16 @@ class ApplicationController < ActionController::Base
 
   def default_url_options(options = {})
     { locale: I18n.locale }
-end
+  end
+
+  private
+
+  def layout_by_resource
+    if devise_controller?
+      "devise"
+    else
+      "application"
+    end
+  end
 
 end

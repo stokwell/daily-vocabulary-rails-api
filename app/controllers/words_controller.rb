@@ -7,14 +7,20 @@ class WordsController < ApplicationController
     @words = Word.by_user(current_user).order(created_at: :desc).where(language: I18n.locale)
   end
 
+  def show; end
 
   def create
     @word = Word.create(word_params.merge(user_id: current_user.id, language: I18n.locale ))
     respond_to do |format|
       if @word.save
-       format.js 
+       format.js
      end
     end
+  end
+
+  def search
+    puts params
+    render json: { message: "hello from server" }
   end
 
   private

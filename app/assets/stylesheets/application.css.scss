@@ -1,0 +1,87 @@
+@import "bulma";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+body {
+  background: #f0f0f1;
+  padding:15px;
+  height: 100vh;
+}
+
+.page-wrapper {
+  background: #ffff;
+  min-height: 100%;
+  border-radius: 10px;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  .header-container {
+    min-height: 50px;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    vertical-align: center;
+    align-items: center;
+  }
+  .navigation {
+    justify-content: flex-start;
+
+    .button {
+      margin-right: 15px;
+    }
+  }
+
+  .page-title {
+    p {
+      color: black;
+      font-size: 24px;
+    }
+  }
+
+  .profile {
+    justify-content: flex-end;
+    .button {
+      margin-left: 15px;
+    }
+  }
+}
+
+.is-pink {
+  background: #fc58ab;
+}
+
+
+.content-wrapper {
+  background: white;
+  padding: 15px;
+  min-height: 100%;
+  display: flex;
+}
+
+.content-container{
+  border-radius: 10px;
+  // background: #f0f0f1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  flex:1;
+
+}
+
+
+.column {
+  flex: 50%;
+}
