@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
   include ActionController::MimeResponds
   before_action :authenticate_user!
-  before_action :set_locale
   layout :layout_by_resource
-  
+
   def query
     result = Schema.execute(
       params[:query]
@@ -12,6 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
 
   def set_locale
     locale = params[:locale].to_s.strip.to_sym
