@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :readings, dependent: :destroy
   has_many :words
 
-  def self.from_omniauth(auth)
+  def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
@@ -19,6 +19,14 @@ class User < ApplicationRecord
       # user.skip_confirmation!
     end
   end
+
+  def self.find_for_vkontakte_oauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+    end
+  end
+
 
   def self.new_with_session(params, session)
     super.tap do |user|

@@ -24,6 +24,7 @@ gem 'devise'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-vkontakte'
 gem "font-awesome-sass"
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'rspec-rails'
