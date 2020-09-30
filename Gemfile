@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 5.1.4'
 gem 'pg'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 gem 'prawn'
 gem 'graphql'
 gem 'jwt'
