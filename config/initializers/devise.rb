@@ -282,4 +282,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   # config.omniauth :facebook, ENV['FACEBOOK_CLIENT_ID'], ENV['FACEBOOK_CLIENT_SECRET'], scope: 'friends,audio,photos', display: 'popup'
   # config.omniauth :vkontakte,	ENV['VK_CLIENT_ID'],  ENV['VK_CLIENT_SECRET']
+  # config.omniauth_path_prefix = "/api/users/auth"
 end

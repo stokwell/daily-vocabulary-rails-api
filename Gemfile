@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 6.0'
+
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'prawn'
@@ -21,6 +22,8 @@ gem 'turbolinks', '~> 5'
 gem 'gon'
 gem 'rails-i18n'
 gem 'devise'
+gem 'devise_token_auth'
+gem "omniauth"
 gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-vkontakte'
 gem "font-awesome-sass"
